@@ -4,10 +4,10 @@ using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    public class DiscountService : IDiscountService
+    public class DiscountManager : IDiscountService
     {
         private readonly IDiscountDal _discountDal;
-        public DiscountService(IDiscountDal discountDal)
+        public DiscountManager(IDiscountDal discountDal)
         {
             _discountDal = discountDal;
         }

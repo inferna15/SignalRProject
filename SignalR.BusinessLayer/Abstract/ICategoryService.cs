@@ -2,7 +2,7 @@
 
 namespace SignalR.BusinessLayer.Abstract
 {
-    internal interface ICategoryService : IGenericService<Category>
+    public interface ICategoryService : IGenericService<Category>
     {
     }
 }

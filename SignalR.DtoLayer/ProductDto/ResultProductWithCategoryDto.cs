@@ -1,6 +1,6 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿namespace SignalR.DtoLayer.ProductDto
 {
-    public class Product
+    public class ResultProductWithCategoryDto
     {
         public int ProductID { get; set; }
         public string Name { get; set; }
@@ -8,9 +8,6 @@
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public bool Status { get; set; }
-
-        // Navigation properties
-        public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public string CategoryName { get; set; }
     }
 }

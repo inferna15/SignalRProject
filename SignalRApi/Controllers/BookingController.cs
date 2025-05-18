@@ -21,7 +21,7 @@ namespace SignalRApi.Controllers
         [HttpGet]
         public IActionResult BookingList()
         {
-            var values = _mapper.Map<ResultBookingDto>(_bookingService.GetAll());
+            var values = _mapper.Map<List<ResultBookingDto>>(_bookingService.GetAll());
             return Ok(values);
         }
 
@@ -33,7 +33,7 @@ namespace SignalRApi.Controllers
             return Ok("Booking successfully added.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
             var value = _bookingService.GetById(id);
@@ -49,7 +49,7 @@ namespace SignalRApi.Controllers
             return Ok("Booking successfully updated.");
         }
 
-        [HttpGet("GetBooking")]
+        [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _mapper.Map<GetBookingDto>(_bookingService.GetById(id));

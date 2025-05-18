@@ -21,7 +21,7 @@ namespace SignalRApi.Controllers
         [HttpGet]
         public IActionResult AboutList()
         {
-            var values = _mapper.Map<ResultAboutDto>(_aboutService.GetAll());
+            var values = _mapper.Map<List<ResultAboutDto>>(_aboutService.GetAll());
             return Ok(values);
         }
 
@@ -33,7 +33,7 @@ namespace SignalRApi.Controllers
             return Ok("About successfully added.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id)
         {
             var value = _aboutService.GetById(id);
@@ -49,7 +49,7 @@ namespace SignalRApi.Controllers
             return Ok("About successfully updated.");
         }
 
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
             var value = _mapper.Map<GetAboutDto>(_aboutService.GetById(id));
